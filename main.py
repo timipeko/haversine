@@ -1,5 +1,6 @@
 import googlemaps 
 from haversine import haversine
+import os
 
 class GmapsWrapper:
     """This class wraps the googlemaps and haversine libraries to provide a convenient way to calculate the geodesic distance between any two locations
@@ -13,10 +14,11 @@ class GmapsWrapper:
         """Initializes client used in making requests for geocoding
 
         Parameters:
+            api_key = API key used to access Google cloud services API
             gmaps(Client) -- client used to make requests to Google cloud services API 
         """
-
-        self.gmaps = googlemaps.Client(key='AIzaSyChg0CkeQ3jZ13j8-C9qCjqqD1rD9QEANM')
+        self.api_key = os.getenv('GMAPS_API_KEY')
+        self.gmaps = googlemaps.Client(key=self.api_key)
 
     def __str__(self):
         return "Gmaps Wrapper Instance"
