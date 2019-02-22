@@ -3,7 +3,7 @@ A thin wrapper class that enables you to calculate the distance between two loca
 
 ## Example
 
-### Calculate the distance between Lyon and Paris
+### Calculate the distance between London and Paris
 ```python
 from wrapper import wrapper 
 
