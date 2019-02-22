@@ -13,7 +13,7 @@ w.calculate_distance('London', 'Paris')
 ```
 
 ## Installation
-Install using wheel. 
+Install in the usual manner using setup.py. 
 Edit your Google Cloud Services Geolocation API into wrapper.py. For more information on getting an API key click [here](https://developers.google.com/maps/documentation/javascript/get-api-key)
 
 ## Contributing
