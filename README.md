@@ -7,9 +7,9 @@ A thin wrapper class that enables you to calculate the distance between two loca
 ```python
 from wrapper import wrapper 
 
-wrapper = wrapper.GmapsWrapper()
-wrapper.calculate_distance('London', 'Paris')
->> "343.55 km"  # 
+w = wrapper.GmapsWrapper()
+w.calculate_distance('London', 'Paris')
+>> "343.55 km"  
 ```
 
 ## Installation
