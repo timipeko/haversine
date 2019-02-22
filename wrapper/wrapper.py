@@ -1,6 +1,5 @@
 import googlemaps 
 from haversine import haversine
-import os
 
 class GmapsWrapper:
     """This class wraps the googlemaps and haversine libraries to provide a convenient way to calculate the geodesic distance between any two locations
@@ -17,33 +16,19 @@ class GmapsWrapper:
             api_key = API key used to access Google cloud services API
             gmaps(Client) -- client used to make requests to Google cloud services API 
         """
-        self.api_key = os.getenv('GMAPS_API_KEY')
+        self.api_key = 'INSERT_API_KEY_HERE' #See readme
         self.gmaps = googlemaps.Client(key=self.api_key)
 
     def __str__(self):
         return "Gmaps Wrapper Instance"
 
     def geocode(self, address):
-        """Wraps gmaps geocode function
-        
-        Arguments:
-            address(str) -- contains location name string e.g. from API query, user input
-        
-        Returns:
-            (JSON) -- Nested JSON containing geocode API response
-        """
+        """Wraps gmaps geocode function"""
 
         return self.gmaps.geocode(address)
 
     def reverse_geocode(self, coords):
-        """Wraps gmaps reverse_geocode function
-        
-        Arguments:
-            coords(tuple) -- contains coordinates to query in form (lat(flt), lng(flt))
-        
-        Returns:
-            (JSON) -- Nested JSON containing reverse_geocode API response
-        """
+        """Wraps gmaps reverse_geocode function"""
         return self.gmaps.reverse_geocode(coords)
 
     def calculate_distance(self, origin, destination):
@@ -66,3 +51,4 @@ class GmapsWrapper:
             distance = "{:.0f} m".format(haversine(origin_coords, destination_coords, unit='m'))
         
         return distance
+
